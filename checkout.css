@@ -1,0 +1,124 @@
+/* --- CHECKOUT PAGE STYLES --- */
+
+.checkout-layout {
+    display: flex;
+    gap: 40px;
+    padding: 60px 0;
+}
+
+.checkout-summary {
+    flex: 1;
+    background: var(--color-white);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-light);
+    /* Make it stick to the top as you scroll */
+    position: sticky;
+    top: 120px; 
+}
+
+.checkout-form {
+    flex: 2;
+}
+
+.checkout-summary .grid-title {
+    font-size: 1.8rem;
+    text-align: left;
+    margin-bottom: 25px;
+}
+.checkout-form .grid-title {
+    font-size: 1.8rem;
+    text-align: left;
+    margin-bottom: 25px;
+}
+.checkout-form .grid-title::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+/* --- Summary Item Styles --- */
+.summary-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.summary-item img {
+    width: 60px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+}
+
+.summary-item-info {
+    flex: 1;
+}
+
+.summary-item-info h4 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.summary-item-info p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.summary-item-price {
+    font-weight: 700;
+}
+
+.summary-total {
+    border-top: 2px solid var(--color-text);
+    padding-top: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* --- Mock Form Styles --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group-row {
+    display: flex;
+    gap: 20px;
+}
+.form-group-row .form-group {
+    flex: 1;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background: var(--color-white);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* --- Responsive for Checkout --- */
+@media (max-width: 900px) {
+    .checkout-layout {
+        flex-direction: column-reverse; /* Form first, then sticky summary */
+    }
+}
