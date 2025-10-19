@@ -300,12 +300,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add listeners for collection cards
     document.querySelectorAll('.collection-card').forEach(card => {
         card.addEventListener('click', (e) => {
-            // We don't need e.preventDefault() because the href="#product-grid-section"
-            // will handle the smooth scrolling for us.
             const category = e.currentTarget.dataset.category;
             renderProductGrid(category);
         });
     });
+
+    // Add listener for 'Show All' button
+    showAllBtn.addEventListener('click', () => {
+        renderProductGrid(); // Call with no filter
+    });
+
+    // --- NEW: Find the checkout button INSIDE the cart modal ---
+    const checkoutBtn = document.querySelector('#cart-modal .btn-full');
+    
+    checkoutBtn.addEventListener('click', () => {
+        // 1. Check if cart is empty
+        if (cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+
+        // 2. Save the cart to localStorage
+        // JSON.stringify() turns the array into a string for storage
+        localStorage.setItem('qamarCart', JSON.stringify(cart));
+
+        // 3. Redirect to the new checkout page
+        window.location.href = 'checkout.html';
+    });
+});
+
 
     // Add listener for 'Show All' button
     showAllBtn.addEventListener('click', () => {
@@ -328,3 +351,4 @@ cartModal.addEventListener('click', (e) => {
 // Listen for cart icon click
 
 cartNavLink.addEventListener('click', openCartModal);
+
