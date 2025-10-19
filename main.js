@@ -209,7 +209,25 @@ function addToCart(productId) {
         });
     }
     
-    alert(`${product.name} (${selectedSize}, ${selectedColor}) was added to your cart!`);
+    // alert(`${product.name} (${selectedSize}, ${selectedColor}) was added to your cart!`); // <-- REMOVE THIS
+    
+    // --- NEW TOAST LOGIC ---
+    // 1. Get the toast element
+    const toast = document.getElementById('toast-notification');
+    
+    // 2. (Optional) Update text if you want it to be dynamic
+    // const toastText = toast.querySelector('span');
+    // toastText.textContent = `${product.name} added!`;
+
+    // 3. Add the 'show' class to slide it up
+    toast.classList.add('show');
+
+    // 4. After 3 seconds, remove the 'show' class to slide it down
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000); // 3000 milliseconds = 3 seconds
+    // --- END NEW TOAST LOGIC ---
+
     closeModals();
     updateCartCount();
 }
@@ -308,4 +326,5 @@ cartModal.addEventListener('click', (e) => {
 });
 
 // Listen for cart icon click
+
 cartNavLink.addEventListener('click', openCartModal);
