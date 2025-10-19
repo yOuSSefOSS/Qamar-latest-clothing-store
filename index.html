@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qamar - Premium Apparel</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="Products/logos/logoonlynobg.png" alt="Qamar Moon Logo" class="custom-logo-icon">
+                    </svg>
+                    Qamar
+                </a>
+            </h1>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a id="cart-nav-link" class="nav-link cart-link">
+                    Cart
+                    <span id="cart-count" class="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="featured-collections container">
+            <a href="#product-grid-section" class="collection-card" data-category="Hoodie">
+                <div class="collection-card-image" style="background-image: url('Products/Hoodies/Cairokee M.jpg');"></div>
+                <div class="collection-card-overlay">
+                    <h3>Hoodie Collection</h3>
+                    <span>Shop Now</span>
+                </div>
+            </a>
+            <a href="#product-grid-section" class="collection-card" data-category="T-Shirt">
+                <div class="collection-card-image" style="background-image: url('Products/T-shirts/Cairokee.jpg');"></div>
+                <div class="collection-card-overlay">
+                    <h3>T-Shirt Collection</h3>
+                    <span>Shop Now</span>
+                </div>
+            </a>
+        </section>
+
+        <section id="product-grid-section" class="product-grid-section container">
+            <h2 class="grid-title">The Qamar Collection</h2>
+            
+            <div class="filter-controls">
+                <button id="show-all-btn" class="btn btn-secondary">Show All</button>
+            </div>
+
+            <div id="products-grid-container" class="products-grid"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Qamar. All rights reserved.</p>
+    </footer>
+
+    <div id="product-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button id="product-modal-close" class="modal-close">&times;</button>
+            <div id="product-modal-body" class="product-modal-content"></div>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button id="cart-modal-close" class="modal-close">&times;</button>
+            <h2 id="cart-modal-title">Your Cart</h2>
+            <div id="cart-items-container"></div>
+            
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">0.00 EGP</span>
+                </div>
+                <button class="btn btn-full">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+
+</body>
+</html>
