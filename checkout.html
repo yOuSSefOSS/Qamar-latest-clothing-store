@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Qamar</title>
+    
+    <meta name="color-scheme" content="light">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="Products/qamar-moon-icon.png" alt="Qamar Moon Logo" class="custom-logo-icon">
+                    Qamar
+                </a>
+            </h1>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a id="cart-nav-link" class="nav-link cart-link" style="display: none;">
+                    Cart
+                    <span id="cart-count" class="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="checkout-layout">
+            
+            <div class="checkout-summary">
+                <h2 class="grid-title">Your Order</h2>
+                <div id="summary-items-container">
+                    </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span id="summary-total-price">0.00 EGP</span>
+                </div>
+            </div>
+
+            <div class="checkout-form">
+                <h2 class="grid-title">Payment Details</h2>
+                <p>This is where the real, secure payment form from Stripe would go. For now, this is a placeholder.</p>
+                
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="name">Name on Card</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your Name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="card">Card Number</label>
+                        <input type="text" id="card" class="form-control" placeholder="1234 5678 9012 3456">
+                    </div>
+                    
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry</label>
+                            <input type="text" id="expiry" class="form-control" placeholder="MM / YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvc">CVC</label>
+                            <input type="text" id="cvc" class="form-control" placeholder="123">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-full">Place Order (Mock)</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Qamar. All rights reserved.</p>
+    </footer>
+
+    <script src="checkout.js"></script>
+
+</body>
+</html>
